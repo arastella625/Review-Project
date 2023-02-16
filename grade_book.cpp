@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 
 Grade_Book::Gradebook(){
   course_total = 1000;
