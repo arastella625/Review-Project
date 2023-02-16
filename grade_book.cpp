@@ -22,6 +22,9 @@ double Grade_Book::individual(int task, int task_num){
 }
 
 double Grade_Book::category(int task){
+  // ex task = assignments 
+  // assignments 202020202020202020202020
+  if ( grades.is_open() )
   i=0;
   sum=0;
   while (i<task.size){
