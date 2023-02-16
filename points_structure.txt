@@ -21,8 +21,7 @@ A	A-	B+	B	B-	C+	C	C-	D+	D	D-	F
 
 
 name_grades.txt looks like 
- Labs 20 20 20 20 20 20 20 20 20 20 = 200
- Assignments  50 50 50 50 = 200
- Projects 150 350 = 500
- Exam 100 = 100
- TOTAL: 200+200+500+100=1000
+ Labs 20 20 20 20 20 20 20 20 20 20 
+ Assignments  50 50 50 50 
+ Projects 150 350 
+ Exam 100 
