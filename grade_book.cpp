@@ -49,8 +49,8 @@ double Grade_Book::course(){
 	
 	std::cout << "Your final course grade, with the current inputs, is: " << total_weight << std::endl;
 }
-  
-std::Grade_Book::run_task(){
+
+void Grade_Book::run_task(){
   // TO-DO: implement variadic functionality?
   // TO-DO: 'driver method' of Grade_Book class
   // we will begin building this once we know that ::individual(), ::category(), and ::course() are all properly working
