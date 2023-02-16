@@ -46,9 +46,9 @@ double Grade_Book::course(){
 	
 	// calculate overall course grade
 	// TO-DO: figure out what to replace 1000 with
-	double total_weight = (this->exam + assignments_grade + labs_grade + projects_grade) / 1000;
+	double total_grade = (this->exam + assignments_grade + labs_grade + projects_grade) / this->course_total;
 	
-	std::cout << "Your final course grade, with the current inputs, is: " << total_weight << std::endl;
+	return total_grade;
 }
 
 void Grade_Book::run_task(){
