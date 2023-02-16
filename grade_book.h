@@ -16,6 +16,9 @@ class Grade_book {
         
     public:
         Grade_book();
+        std::vector<double> get_labs();
+        std::vector<double> get_assignments();
+        std::vector<double> get_projects();
         void read_file(std::string file_Name);
         double individual(std::string task, int task_num);
         double category(std::string task);
