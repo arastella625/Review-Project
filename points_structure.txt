@@ -17,4 +17,12 @@ A	A-	B+	B	B-	C+	C	C-	D+	D	D-	F
 
 94	90	87	83	80	77	73	70	67	63	60	0
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?E84268D81D89D48F97A24FBAB67D53113C32
+
+
+
+name_grades.txt looks like 
+ Labs 20 20 20 20 20 20 20 20 20 20 = 200
+ Assignments  50 50 50 50 = 200
+ Projects 150 350 = 500
+ Exam 100 = 100
+ TOTAL: 200+200+500+100=1000
