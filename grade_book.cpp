@@ -22,9 +22,14 @@ double Grade_Book::individual(int task, int task_num){
 }
 
 void Grade_Book::category(int task){
-  //J
+  i=0;
+  sum=0;
+  while (i<task.size){
+    sum_grade = size[i]+sum_grade
+    i++
   //add all tasks in specificcategory
   //Returns all output
+    return sum_grade
 }
 
 void Grade_Book::course(){
