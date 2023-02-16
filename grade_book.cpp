@@ -22,20 +22,16 @@ double Grade_Book::individual(int task, int task_num){
   return grade;
 }
 
-double Grade_Book::category(int task){
+double Grade_Book::category(str task){
   // ex task = assignments 
-  // assignments 202020202020202020202020
-  if ( grades.is_open() )
-  i=0;
-  sum=0;
-  while (i<task.size){
-    sum_grade = size[i]+sum_grade
-    i++
-  //add all tasks in specificcategory
-  //Returns all output
-    return sum_grade
+  sum_grade=0;
+  for(i=0, i<   ;i ++){
+    sum_grade = i + sum_grade
 }
+return sum_grade
+  std::cout << "total of the '" << task <<"is "<< sum_grade << "'.\n";
 
+  std::cout ," is: ", 
 double Grade_Book::course(){
   //M
   return grade;
