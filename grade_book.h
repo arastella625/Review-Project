@@ -21,12 +21,8 @@ class Grade_Book {
     Gradebook();
     void read_File(std::string file_Name);
     double individual();
-    double category();
-    double course();
-
-
-
-
+    void category();
+    void course();
 };
 
 
