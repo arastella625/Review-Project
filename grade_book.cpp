@@ -26,7 +26,7 @@ double Grade_Book::category(str task){
   // ex task = assignments 
   sum_grade=0;
     for(i=0, i< "name from read file  "; i++){
-    sum_grade = "name from read file  " [i] + sum_grade
+      sum_grade = "name from read file  " [i] + sum_grade
 }
 return sum_grade
   std::cout << "total of the '" << task <<"is "<< sum_grade << "'.\n";
