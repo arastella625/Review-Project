@@ -4,15 +4,87 @@
 #include <string>
 #include <fstream>
 
-Grade_Book::Grade_Book(){
-  course_total = 1000;
+Grade_book::Grade_book(){
+
 }
 
-void Grade_Book::read_File(std::string file_Name){
-  //A
+void Grade_book::read_file(std::string file_name){
+
+    std::fstream file;
+    file.open(file_name);
+
+    std::string line;
+    std::string token;
+
+    if(std::getline(file, line)){
+
+        std::stringstream word;
+        std::cout << "line: " << std::endl;
+
+        while(word >> token){
+
+            std::cout << "word: " << token << " ";
+
+            labs.push_back(std::stod(token));
+        }
+    }
+    std::cout << "\n";
+
+    if(std::getline(file, line)){
+
+        std::stringstream word;
+        std::cout << "line: " << std::endl;
+
+        while(word >> token){
+
+            std::cout << "word: " << token << " ";
+            assignments.push_back(std::stod(token));
+        }
+    }
+     std::cout << "\n";
+    if(std::getline(file, line)){
+
+        std::stringstream word;
+        std::cout << "line: " << std::endl;
+
+        while(word >> token){
+
+            std::cout << "word: " << token << " ";
+            projects.push_back(std::stod(token));
+        }
+    }
+    std::cout << "\n";
+    if(std::getline(file, line)){
+
+       exam = std::stod(line);
+    }
+
+    std::cout << "Lab Grades: ";
+    for(int i = 0; i < labs.size(); i++){
+
+        std::cout << labs[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Assignment Grades: ";
+    for(int i = 0; i < assignments.size(); i++){
+
+        std::cout << assignments[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Project Grades: ";
+    for(int i = 0; i < projects.size(); i++){
+
+        std::cout << projects[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Exam Grade: " << exam << std::endl;
+
 }
 
-double Grade_Book::individual(int task, int task_num){
+double Grade_book::individual(std::string task, int task_num){
   double grade;
   
   //If statements for four options
@@ -22,18 +94,31 @@ double Grade_Book::individual(int task, int task_num){
   return grade;
 }
 
-double Grade_Book::category(str task){
-  // ex task = assignments 
+double Grade_book::category(std::string task){
+    double sum_grade;
+    /*
+  i=0;
+  sum=0;
+  while (i<task.size){
+    sum_grade = size[i]+sum_grade
+    i++
+  //add all tasks in specificcategory
+  //Returns all output
+  */
+/*
+	// ex task = assignments 
   sum_grade=0;
     for(i=0, i< "name from read file  "; i++){
       sum_grade = "name from read file  " [i] + sum_grade
-}
-return sum_grade
-  std::cout << "total of the '" << task <<"is "<< sum_grade << "'.\n";
+	      std::cout << "total of the '" << task <<"is "<< sum_grade << "'.\n";
 
   std::cout ," is: ",
+  */
+    return sum_grade;
+}
 
-double Grade_Book::course(){
+
+double Grade_book::course(){
 	// Mikey
 	double assignments_grade;
 	assignments_grade = this->category(1); // fetch assignments weight
@@ -51,7 +136,7 @@ double Grade_Book::course(){
 	return total_grade;
 }
 
-void Grade_Book::run_task(){
+void Grade_book::run_task(){
   // TO-DO: implement variadic functionality?
   // TO-DO: 'driver method' of Grade_Book class
   // we will begin building this once we know that ::individual(), ::category(), and ::course() are all properly working
