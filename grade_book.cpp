@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 
-Grade_Book::Gradebook(){
+Grade_Book::Grade_Book(){
   course_total = 1000;
 }
 
