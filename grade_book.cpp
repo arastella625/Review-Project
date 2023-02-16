@@ -8,6 +8,19 @@ Grade_book::Grade_book(){
 
 }
 
+std::vector<double> Grade_book::get_labs(){
+
+    return labs;
+}
+std::vector<double> Grade_book::get_assignments(){
+
+    return assignments;
+}
+std::vector<double> Grade_book::get_projects(){
+
+    return projects;
+}
+
 void Grade_book::read_file(std::string file_name){
 
     std::fstream file;
