@@ -8,7 +8,7 @@ Grade_Book::Grade_Book(){
   course_total = 1000;
 }
 
-void read_File(std::string file_Name){
+void Grade_Book::read_File(std::string file_Name){
   //A
 }
 
@@ -34,6 +34,7 @@ return sum_grade
   std::cout ," is: ",
 
 double Grade_Book::course(){
+	// Mikey
 	double assignments_grade;
 	assignments_grade = this->category(1); // fetch assignments weight
 	
