@@ -21,7 +21,7 @@ double Grade_Book::individual(int task, int task_num){
   return grade;
 }
 
-void Grade_Book::category(int task){
+double Grade_Book::category(int task){
   i=0;
   sum=0;
   while (i<task.size){
@@ -32,7 +32,13 @@ void Grade_Book::category(int task){
     return sum_grade
 }
 
-void Grade_Book::course(){
+double Grade_Book::course(){
   //M
+  return grade;
 }
+  
+std::Grade_Book::run_task(){
+  
+}
+  
   
