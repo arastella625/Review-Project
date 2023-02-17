@@ -23,78 +23,82 @@ std::vector<double> Grade_book::get_projects(){
 
 void Grade_book::read_file(std::string file_name){
 
+    //create fstream 
     std::fstream file;
+    //open the file
     file.open(file_name);
-
+    //strings to hold the lines and values
     std::string line;
     std::string token;
-
+    //get first line of file
     if(std::getline(file, line)){
+        //tokenize values with stringstream
+        std::stringstream word(line);
 
-        std::stringstream word;
-        std::cout << "line: " << std::endl;
-
+        //while tokenizing
         while(word >> token){
 
-            std::cout << "word: " << token << " ";
-
+            //push back into labs vector
             labs.push_back(std::stod(token));
         }
     }
-    std::cout << "\n";
-
+    //get second line of text file 
     if(std::getline(file, line)){
 
-        std::stringstream word;
-        std::cout << "line: " << std::endl;
+        //begin to tokenize the values
+        std::stringstream word(line);
 
+        //while tokenizing 
         while(word >> token){
 
-            std::cout << "word: " << token << " ";
+            //push back into assignments vector
             assignments.push_back(std::stod(token));
         }
     }
-     std::cout << "\n";
+    //get third line of file 
     if(std::getline(file, line)){
 
-        std::stringstream word;
-        std::cout << "line: " << std::endl;
+        //begin tokenizing values
+        std::stringstream word(line);
 
+        //while tokenizing
         while(word >> token){
 
-            std::cout << "word: " << token << " ";
+            //push back into projects vector
             projects.push_back(std::stod(token));
         }
     }
-    std::cout << "\n";
+    //get last line of file
     if(std::getline(file, line)){
 
+       //assign it to exam  
        exam = std::stod(line);
     }
 
+    /*
     std::cout << "Lab Grades: ";
     for(int i = 0; i < labs.size(); i++){
 
-        std::cout << labs[i] << " ";
+        std::cout << get_labs()[i] << " ";
     }
     std::cout << "\n";
 
     std::cout << "Assignment Grades: ";
     for(int i = 0; i < assignments.size(); i++){
 
-        std::cout << assignments[i] << " ";
+        std::cout << get_assignments()[i] << " ";
     }
     std::cout << "\n";
 
     std::cout << "Project Grades: ";
     for(int i = 0; i < projects.size(); i++){
 
-        std::cout << projects[i] << " ";
+        std::cout << get_projects()[i] << " ";
     }
     std::cout << "\n";
 
     std::cout << "Exam Grade: " << exam << std::endl;
-
+    */
 }
 
 double Grade_book::individual(std::string task, int task_num){
