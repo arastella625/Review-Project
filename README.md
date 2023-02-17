@@ -62,14 +62,17 @@ Please follow in this order:
    
      Please type in as you see here.
      
-    5. *IF USER CHOSE individual* there will be one last CLA. This will be the number of the task with which the user would like to be outputted. IMPORTANT: this number will act as an *indexed* number. For example:
+    5. *IF USER CHOSE individual* there will be one last CLA. This will be the number of the task with which the user would 
+    like to be outputted. IMPORTANT: this number will act as an *indexed* number. For example:
   
-            - There are a total of 10 lab grades. Normally this is counted 1 - 10. However, this program
-              will count 0 - 9. If the user wanted the 5th lab grade, they would input the number 4. 
-            - There are a total of 4 assignment grades. This will be counted 0 - 3. If the user wanted the 2nd assignment                     grade, they will input the number 1.
-            - There are a total of 2 project grades. This will be counted 0 - 1. If the user wanted the 1st project grade, they               will input the number 0.
-            - There is only 1 exam grade. The user will input 0 for this category.
-            - 
+        - There are a total of 10 lab grades. Normally this is counted 1 - 10. However, this program
+          will count 0 - 9. If the user wanted the 5th lab grade, they would input the number 4. 
+        - There are a total of 4 assignment grades. This will be counted 0 - 3. If the user wanted the 2nd assignment grade, 
+        they will input the number 1.
+        - There are a total of 2 project grades. This will be counted 0 - 1. If the user wanted the 1st project grade, they 
+        will input the number 0.
+        - There is only 1 exam grade. The user will input 0 for this category.
+        
       Inputting numbers that are not within the index count for their category will cause the program to not run.
       
 Command line(s) may look like this:
