@@ -46,36 +46,48 @@ Please follow in this order:
      like to use. Proper spelling is important - program will NOT run otherwise.
   3. Thirdly, there will be a command for the type of deliverable that the user would like to see outputted. Please
      see the description for for further explanation. The user will have three choices:
+     
             - individual
             - category
             - course
+            
      Please type in as you see here. 
+     
   4. *IF USER CHOOSES individual OR category* there will be a fourth CLA. This will be the task type that the user would like         to see outputted. The user will have four choices:
+ 
             - labs
             - assignments
             - projects
             - exam 
+   
      Please type in as you see here.
+     
    5. *IF USER CHOSE individual* there will be one last CLA. This will be the number of the task with which the user would like       to be outputted. IMPORTANT: this number will act as an *indexed* number. For example:
+  
             - There are a total of 10 lab grades. Normally this is counted 1 - 10. However, this program
               will count 0 - 9. If the user wanted the 5th lab grade, they would input the number 4. 
             - There are a total of 4 assignment grades. This will be counted 0 - 3. If the user wanted the 2nd assignment                     grade, they will input the number 1.
             - There are a total of 2 project grades. This will be counted 0 - 1. If the user wanted the 1st project grade, they               will input the number 0.
             - There is only 1 exam grade. The user will input 0 for this category.
+            - 
       Inputting numbers that are not within the index count for their category will cause the program to not run.
 
 After outputting the deliverable chosen by the user, the program will prompt the user about making changes to the grades within the input file given in the command line. Directions are in the ouput of the terminal but to make it clear please read the following questions as will be seen in the output:
-  1. Does the user want to make changes to a grade? Please type either Y or N
-    - The only acceptable answers are Y or N. Do not spell out Yes or No. If N, the program will end. 
-  2. What category will you be changing? Please copy one of these choices:
+
+    1. Does the user want to make changes to a grade? Please type either Y or N
+    - The only acceptable answers are Y or N. Do not spell out Yes or No. If N, the program will end.
+    
+    2. What category will you be changing? Please copy one of these choices:
     - labs
     - assignments
     - projects
     - exam
     Please spell exactly as seen.
-  3. Which grade will you be changing? *Reminder - please use indexed numbers*
+    
+    3. Which grade will you be changing? *Reminder - please use indexed numbers*
     - Again, as the question states, the only number acceptable here will follow the same rules as the CLA in #5.
-  4. What will be the grade you are changing to?
+    
+    4. What will be the grade you are changing to?
     - This number will be a new grade number for that specific lab/assignment/project/exam. 
   
 After the last question, the program will then change the grade the user entered to the new grade, overwriting the input file given. The program will then end. The user can now run the program again with the same file to work with the new grade. 
