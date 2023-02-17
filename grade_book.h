@@ -20,6 +20,7 @@ class Grade_book {
         std::vector<double> get_assignments();
         std::vector<double> get_projects();
         void read_file(std::string file_Name);
+        void output_file(std::string file_name, std::string task_answer, int task_num, int task_grade);
         double individual(std::string task, int task_num);
         double category(std::string task);
         double course();
