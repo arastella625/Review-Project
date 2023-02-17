@@ -40,12 +40,12 @@ As usual, the order you put them in will be *critical* to the success of the pro
 as the spelling of each of them. 
 Please follow in this order:  
 
-  1. First command will be your program name - this will be whatever name you used in compilation.
-  2. Secondly, there will be a command for an input file. There are 4 sets of data within the repository. 
-     The .txt files will be named as follows: "nameOfStudent_grades.txt". User will choose which data file they would 
-     like to use. Proper spelling is important - program will NOT run otherwise.
-  3. Thirdly, there will be a command for the type of deliverable that the user would like to see outputted. Please
-     see the description for for further explanation. The user will have three choices:
+    1. First command will be your program name - this will be whatever name you used in compilation.
+    2. Secondly, there will be a command for an input file. There are 4 sets of data within the repository. 
+       The .txt files will be named as follows: "nameOfStudent_grades.txt". User will choose which data file they would 
+       like to use. Proper spelling is important - program will NOT run otherwise.
+    3. Thirdly, there will be a command for the type of deliverable that the user would like to see outputted. Please
+       see the description for for further explanation. The user will have three choices:
      
             - individual
             - category
@@ -53,7 +53,7 @@ Please follow in this order:
             
      Please type in as you see here. 
      
-  4. *IF USER CHOOSES individual OR category* there will be a fourth CLA. This will be the task type that the user would like         to see outputted. The user will have four choices:
+    4. *IF USER CHOOSES individual OR category* there will be a fourth CLA. This will be the task type that the user would like         to see outputted. The user will have four choices:
  
             - labs
             - assignments
@@ -62,7 +62,7 @@ Please follow in this order:
    
      Please type in as you see here.
      
-   5. *IF USER CHOSE individual* there will be one last CLA. This will be the number of the task with which the user would like       to be outputted. IMPORTANT: this number will act as an *indexed* number. For example:
+    5. *IF USER CHOSE individual* there will be one last CLA. This will be the number of the task with which the user would             like to be outputted. IMPORTANT: this number will act as an *indexed* number. For example:
   
             - There are a total of 10 lab grades. Normally this is counted 1 - 10. However, this program
               will count 0 - 9. If the user wanted the 5th lab grade, they would input the number 4. 
