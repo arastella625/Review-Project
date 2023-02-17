@@ -99,6 +99,91 @@ void Grade_book::read_file(std::string file_name){
 
     std::cout << "Exam Grade: " << exam << std::endl;
     */
+    file.close();
+}
+
+void Grade_book::output_file(std::string file_name, std::string task_answer, int task_num, int task_grade){
+
+    if(task_answer == "exam"){
+
+        exam = task_grade;
+    }
+    else{
+
+        if(task_answer == "labs"){
+            for(int i = 0; i < labs.size(); i++){
+
+                if(i == task_num){
+
+                    //std::cout << "Changing grade from" << labs[i] << " to " << task_grade << std::endl;
+
+                    labs[i] = task_grade;
+                    break;
+                }
+            }
+        }
+        else if(task_answer == "assignments"){
+
+            for(int i = 0; i < assignments.size(); i++){
+
+                if(i == task_num){
+
+                    //std::cout << "Changing grade from" << assignments[i] << " to " << task_grade << std::endl;
+
+                    assignments[i] = task_grade;
+                    break;
+                }
+            }
+        }
+        else{
+
+            for(int i = 0; i < projects.size(); i++){
+
+                if(i == task_num){
+
+                    //std::cout << "Changing grade from" << projects[i] << " to " << task_grade << std::endl;
+
+                    projects[i] = task_grade;
+                    break;
+                }
+            }
+        }
+    }
+
+    std::ofstream file;
+    file.open(file_name);
+
+    for(int i = 0; i < labs.size(); i++){
+
+        //values << labs[i];
+        //file << values.str();
+        file << labs[i] << " ";
+    }
+
+    file << "\n";
+
+    for(int i = 0; i < assignments.size(); i++){
+
+        //values << assignments[i];
+        //file << values.str();
+        file << assignments[i] << " ";
+    }
+
+    file << "\n";
+
+    for(int i = 0; i < projects.size(); i++){
+
+        //values << projects[i];
+        //file << values.str();
+        file << projects[i] << " ";
+    }
+
+    file << "\n";
+
+    file << exam;
+
+    file.close();
+
 }
 
 double Grade_book::individual(std::string task, int task_num){
