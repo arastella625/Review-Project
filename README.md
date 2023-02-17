@@ -71,6 +71,13 @@ Please follow in this order:
             - There is only 1 exam grade. The user will input 0 for this category.
             - 
       Inputting numbers that are not within the index count for their category will cause the program to not run.
+      
+Command line(s) may look like this:
+   
+           ./prog_name nameOfStudent_grades.txt individual lab 3
+           ./prog_name nameOfStudent_grades.txt category assignments
+           ./prog_name nameOfStudent_grades.txt course
+
 
 After outputting the deliverable chosen by the user, the program will prompt the user about making changes to the grades within the input file given in the command line. Directions are in the ouput of the terminal but to make it clear please read the following questions as will be seen in the output:
 
