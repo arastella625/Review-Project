@@ -187,13 +187,44 @@ void Grade_book::output_file(std::string file_name, std::string task_answer, int
 }
 
 double Grade_book::individual(std::string task, int task_num){
-  double grade;
-  
-  //If statements for four options
-  //Error Handling 
-  //G
-  
-  return grade;
+    double grade;
+
+    if (task == "assignments") {
+        grade = assignments[task_num];
+        return grade;
+    } else if ( task == "labs") {
+        grade = labs[task_num];
+        return grade;
+    } else if ( task == "projects") {
+        grade = projects[task_num];
+        return grade;
+    } else {
+        grade = exam;
+        return grade;
+    }
+    //for(int i = 0; i < assignments.size(); i++){
+    //if(task_num == assignments[i]){
+    //grade = assignments[i];
+    //}
+    //} else if ( task == "labs"){
+    //    for(int i = 0; i < labs.size(); i++){
+    //        if(task_num == labs[i]){
+    //            grade = labs[i];
+    //            return grade;
+    //        }
+    //    }
+    //} else if (task == "projects"){
+    //    for(int i = 0; i < projects.size(); i++){
+    //        if(task_num == projects[i]){
+    //            grade = projects[i];
+    //            return grade;
+    //        }
+    //    }
+    //} else {
+    //    if (task == "exam"){
+    //        grade =
+    //    }
+    //}
 }
 
 double Grade_book::category(std::string task){
