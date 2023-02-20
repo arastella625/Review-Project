@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 
-
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[])
+{
     
      /*
     // GOAL: beat all of these test cases successfully
