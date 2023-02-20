@@ -24,6 +24,9 @@ class Grade_book {
         //double category(std::string _category);
         double Grade_book::category(int _category);
         double course();
-        void run_task();
+        void print_individual();
+        void print_category();
+        void print_course();
+        //void run_task();
 };
 #endif /* GRADE_BOOK */
