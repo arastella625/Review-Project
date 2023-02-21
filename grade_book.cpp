@@ -336,3 +336,27 @@ void Grade_book::run_task()
   // TO-DO: 'driver method' of Grade_Book class
   // we will begin building this once we know that ::individual(), ::category(), and ::course() are all properly working
 }
+
+void Grade_book::print_individual(std::string task, int task_num) {
+    double grade = individual(task, task_num);
+    std::cout << task << task_num << "grade is" << grade << "/n";
+}
+
+void print_category(std::string task) {
+    double grade = category(task);
+    if (task == "labs"){
+        for (int i = 0; i <= labs.size(); i++){
+            std::cout << "Lab " << i << ": " << labs[i] << "/n";
+        }
+    } else if ( task == "assignments") {
+        for (int i = 0; i <= assignemnts.size(); i++){
+            std::cout << "Assignement " << i << ": " << assignments[i] << "/n";
+        }
+    } else if (task == "projects") {
+        for (int i = 0; i <= projects.size(); i++){
+            std::cout << "Projects " << i << ": " << projects[i] << "/n";
+        }
+    } else {
+        std::cout << "Exam: " << exam;
+    }
+    }
