@@ -27,30 +27,23 @@ int main(int argc, char* argv[])
     //and output task method
     if(argc == 5){
 
-        /*
         std::string task = argv[3];
         int task_num = std::stoi(argv[4]);
-        grades.individual(task, task_num);
-        grades.run_task();
-        */
+        grades.print_individual(task, task_num);
+        
     }
     //if argc is 3 then store CLAs and call category method
     //and output task method
     else if(argc == 3){
 
-        /*
         std::string task = argv[2];
-        grades.category(task);
-        grades.run_task();
-        */
+        grades.print_category(task);
+
     }
     //else run the course and output task method
     else{
 
-        /*
-        grades.course();
-        grades.run_task();
-        */
+        grades.print_course();
     }
 
     bool output = true;
