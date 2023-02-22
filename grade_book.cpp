@@ -3,16 +3,17 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <sstream>
 
-Grade_book::Grade_book()
-{
+Grade_book::Grade_book(){
+
 
 }
 
-void Grade_book::read_file(std::string file_name)
-{
+void Grade_book::read_file(std::string file_name){
+
     //create fstream 
-    std::fstream file;
+    std::ifstream file;
     //open the file
     file.open(file_name);
     //strings to hold the lines and values
@@ -63,47 +64,76 @@ void Grade_book::read_file(std::string file_name)
        exam = std::stod(line);
     }
 
-    file.close();
+
+    /*
+    std::cout << "Lab Grades: ";
+    for(int i = 0; i < labs.size(); i++){
+
+        std::cout << get_labs()[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Assignment Grades: ";
+    for(int i = 0; i < assignments.size(); i++){
+
+        std::cout << get_assignments()[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Project Grades: ";
+    for(int i = 0; i < projects.size(); i++){
+
+        std::cout << get_projects()[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Exam Grade: " << exam << std::endl;
+    */
+
+   file.close();
+
 }
 
-void Grade_book::output_file(std::string file_name, std::string task_answer, int task_num, int task_grade)
-{
-    //if exam just set equal to changed grade	
-    if(task_answer == "exam") {
+void Grade_book::output_file(std::string file_name, std::string task_answer, int task_num, int task_grade){
+
+    if(task_answer == "exam"){
 
         exam = task_grade;
     }
-    //otherwise go through vectors	
     else{
-	//if labs, find grade and change to new grade and end loop
+
         if(task_answer == "labs"){
             for(int i = 0; i < labs.size(); i++){
 
                 if(i == task_num){
+
+                    //std::cout << "Changing grade from" << labs[i] << " to " << task_grade << std::endl;
 
                     labs[i] = task_grade;
                     break;
                 }
             }
         }
-	//if assignments, find grade and change to new grade and end loop    
         else if(task_answer == "assignments"){
 
             for(int i = 0; i < assignments.size(); i++){
 
                 if(i == task_num){
 
+                    //std::cout << "Changing grade from" << assignments[i] << " to " << task_grade << std::endl;
+
                     assignments[i] = task_grade;
                     break;
                 }
             }
         }
-	//otherwise find grade in projects and change and end loop    
         else{
 
             for(int i = 0; i < projects.size(); i++){
 
                 if(i == task_num){
+
+                    //std::cout << "Changing grade from" << projects[i] << " to " << task_grade << std::endl;
 
                     projects[i] = task_grade;
                     break;
@@ -114,12 +144,11 @@ void Grade_book::output_file(std::string file_name, std::string task_answer, int
 
     std::ofstream file;
     file.open(file_name);
-    
-    //go through each vector and rewrite the grades in the file
-    //with the new changed grade	
-	
+
     for(int i = 0; i < labs.size(); i++){
 
+        //values << labs[i];
+        //file << values.str();
         file << labs[i] << " ";
     }
 
@@ -127,6 +156,8 @@ void Grade_book::output_file(std::string file_name, std::string task_answer, int
 
     for(int i = 0; i < assignments.size(); i++){
 
+        //values << assignments[i];
+        //file << values.str();
         file << assignments[i] << " ";
     }
 
@@ -134,6 +165,8 @@ void Grade_book::output_file(std::string file_name, std::string task_answer, int
 
     for(int i = 0; i < projects.size(); i++){
 
+        //values << projects[i];
+        //file << values.str();
         file << projects[i] << " ";
     }
 
@@ -145,28 +178,25 @@ void Grade_book::output_file(std::string file_name, std::string task_answer, int
 
 }
 
-double Grade_book::individual(std::string task, int task_num)
-{
-    double grade;
+double Grade_book::individual(std::string category, int cat_num){
+  double grade;
 
-    if (task == "assignments") {
-        grade = assignments[task_num];
+    if (category == "assignments") {
+        grade = assignments[cat_num];
         return grade;
-    } else if ( task == "labs") {
-        grade = labs[task_num];
+    } else if ( category == "labs") {
+        grade = labs[cat_num];
         return grade;
-    } else if ( task == "projects") {
-        grade = projects[task_num];
+    } else if ( category == "projects") {
+        grade = projects[cat_num];
         return grade;
     } else {
         grade = exam;
         return grade;
     }
-
 }
 
-double Grade_book::category(std::string category)
-{
+double Grade_book::category(std::string category){
     double sum_grade = 0.0;
     
    
@@ -195,47 +225,53 @@ double Grade_book::category(std::string category)
         sum_grade = exam;
         return sum_grade;
     }
-    
+
+    return sum_grade;
 }
 
-double Grade_book::course()
-{
-	// Mikey
-	double assignments_grade;
-	assignments_grade = this->category(1); // fetch assignments weight
-	//assignments_grade = this->category("ASSIGNMENTS"); // fetch assignments weight
-	
-	double labs_grade;
-	labs_grade = this->category(2); // fetch labs weight
-	
-	double projects_grade;
-	projects_grade = this->category(3); // fetch projects weight
-	
-	// calculate overall course grade
-	// TO-DO: figure out what to replace 1000 with
-	double total_grade = (this->exam + assignments_grade + labs_grade + projects_grade) / this->course_total;
-	
-	return total_grade;
+double Grade_book::course(){
+  
+  double final_grade;
+
+  for(int i = 0; i < labs.size(); i++){
+
+        final_grade += labs[i];
+  }
+  for(int i = 0; i < assignments.size(); i++){
+
+        final_grade += assignments[i];
+  }
+  for(int i = 0; i < projects.size(); i++){
+
+        final_grade += projects[i];
+  }
+
+  final_grade += exam;
+
+  final_grade/10;
+
+  return final_grade;
 }
 
-
-void Grade_book::print_individual(std::string task, int task_num) {
-    double grade = individual(task, task_num);
-    std::cout << task << task_num << "grade is" << grade << "/n";
+void Grade_book::print_individual(std::string category, int cat_num) {
+    double grade = individual(category, cat_num);
+    std::cout << category << " " << cat_num << "grade is" << grade << "/n";
 }
 
-void print_category(std::string task) {
-    double grade = category(task);
-    if (task == "labs"){
-        for (int i = 0; i <= labs.size(); i++){
+void Grade_book::print_category(std::string category_name) {
+
+    double grade = category(category_name);
+
+    if (category_name == "labs"){
+        for (int i = 1; i <= labs.size(); i++){
             std::cout << "Lab " << i << ": " << labs[i] << "/n";
         }
-    } else if ( task == "assignments") {
-        for (int i = 0; i <= assignemnts.size(); i++){
+    } else if (category_name == "assignments") {
+        for (int i = 1; i <= assignments.size(); i++){
             std::cout << "Assignement " << i << ": " << assignments[i] << "/n";
         }
-    } else if (task == "projects") {
-        for (int i = 0; i <= projects.size(); i++){
+    } else if (category_name == "projects") {
+        for (int i = 1; i <= projects.size(); i++){
             std::cout << "Projects " << i << ": " << projects[i] << "/n";
         }
     } else {
@@ -243,17 +279,17 @@ void print_category(std::string task) {
     }
 	
     }
-
+  
 void Grade_book::print_course(){
-
-    double final_grade = (course()/10);
+  
+    double final_grade = course();
     int answer;
 
     std::cout << "Which number would you like to see?: " << "\n";
 
     std::cout << "\t" << "1. All grades in each category and the course overall grade" << "\n";
     std::cout << "\t" << "2. Each category total and course overall grade" << "\n";
-    std::cout << "\t" << "3. Only the course overall grade" << "\n"
+    std::cout << "\t" << "3. Only the course overall grade" << "\n";
 
     std::cout << "Answer: ";
     std::cin >> answer;
@@ -265,7 +301,7 @@ void Grade_book::print_course(){
 
         for(int i=0; i < labs.size(); i++){
 
-            std::cout << labs[i];
+            std::cout << labs[i] << " ";
         }
         std::cout << "\n";
 
@@ -273,7 +309,7 @@ void Grade_book::print_course(){
 
         for(int i=0; i < assignments.size(); i++){
 
-            std::cout << assignments[i];
+            std::cout << assignments[i] << " ";
         }
         std::cout << "\n";
 
@@ -281,7 +317,7 @@ void Grade_book::print_course(){
 
         for(int i=0; i < projects.size(); i++){
 
-            std::cout << projects[i];
+            std::cout << projects[i] << " ";
         }
         std::cout << "\n";
 
@@ -292,10 +328,10 @@ void Grade_book::print_course(){
 
     if(answer == 2){
 
-        std::cout << "Lab Total Grade: " << category(labs) << "\n"
-        std::cout << "Assignment Total Grade: " << category(assignments) << "\n"
-        std::cout << "Project Total Grade: " << category(projects) << "\n"
-        std::cout << "Exam Total Grade: " << exam << "\n"
+        std::cout << "Lab Total Grade: " << category("labs") << "\n";
+        std::cout << "Assignment Total Grade: " << category("assignments") << "\n";
+        std::cout << "Project Total Grade: " << category("projects") << "\n";
+        std::cout << "Exam Total Grade: " << exam << "\n";
         std::cout << "Course Overall Grade: " << final_grade << std::endl;
     }
 
@@ -303,5 +339,4 @@ void Grade_book::print_course(){
 
         std::cout << "Course Overall Grade: " << final_grade << std::endl;
     }
-
 }
