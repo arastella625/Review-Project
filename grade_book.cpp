@@ -170,7 +170,7 @@ double Grade_book::category(std::string _category)
     double sum_grade = 0.0;
     
     //if (_category == "ASSIGNMENTS") {
-    if (_category == 1) {   //ASSIGNMENTS
+    if (_category == "ASSIGNMENTS") {   //ASSIGNMENTS
         cout << "Assignments ";
         for (int i = 0; i < assignments.size(); i++) {
             sum_grade += assignments[i];
@@ -181,7 +181,7 @@ double Grade_book::category(std::string _category)
     }
     
     //if (_category == "LABS") {
-    if (_category == 2) {   //LABS
+    if (_category == "LABS") {   //LABS
         cout << "Labs ";
         for (int i = 0; i < labs.size(); i++) {
             sum_grade += labs[i];
@@ -192,7 +192,7 @@ double Grade_book::category(std::string _category)
     }
     
     //if (_category == "PROJECTS") {
-    if (_category == 3) {  //PROJECTS
+    if (_category == "PROJECTS") {  //PROJECTS
         cout << "Projects ";
         for (int i = 0; i < projects.size(); i++) {
             sum_grade += projects[i];
@@ -203,7 +203,7 @@ double Grade_book::category(std::string _category)
     }
     
     //if (_category == "EXAM") {
-    if (_category == 4) {  //EXAM
+    if (_category == "EXAM") {  //EXAM
         cout << "Exam ";
         sum_grade = exam;
         cout << exam << " = " << sum_grade << endl;
