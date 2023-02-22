@@ -2,20 +2,13 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char* argv[])
-{
-    
-     /*
-    // GOAL: beat all of these test cases successfully
-    gradebook.read_File("grades.txt");
-    // TO-DO: implement run_task and make it a variadic method?
-    gradebook.run_task("individual", "assignments", 4) // outputs the individual grade of assignment #4
-    gradebook.run_task("category", "labs"); // outputs category total for labs
-    gradebook.run_task("course"); // outputs the entire course grade
-    */
-    
+
+int main(int argc, char* argv[]){
+
     //read in file name from CLA
     std::string file_name = argv[1];
+    std::string category;
+    int cat_num;
 
     //create a Grade_book object
     Grade_book grades;
@@ -27,17 +20,17 @@ int main(int argc, char* argv[])
     //and output task method
     if(argc == 5){
 
-        std::string task = argv[3];
-        int task_num = std::stoi(argv[4]);
-        grades.print_individual(task, task_num);
+        category = std::string(argv[3]);
+        cat_num = std::stoi(argv[4]);
+        grades.print_individual(category, cat_num);
         
     }
     //if argc is 3 then store CLAs and call category method
     //and output task method
     else if(argc == 3){
 
-        std::string task = argv[2];
-        grades.print_category(task);
+        category = std::string(argv[2]);
+        grades.print_category(category);
 
     }
     //else run the course and output task method
@@ -98,5 +91,7 @@ int main(int argc, char* argv[])
         output = false;
 
     }
+
+
     return 0;
 }
