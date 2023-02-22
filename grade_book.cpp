@@ -165,52 +165,37 @@ double Grade_book::individual(std::string task, int task_num)
 
 }
 
-double Grade_book::category(std::string _category)
+double Grade_book::category(std::string category)
 {
     double sum_grade = 0.0;
     
-    //if (_category == "ASSIGNMENTS") {
-    if (_category == "ASSIGNMENTS") {   //ASSIGNMENTS
-        cout << "Assignments ";
+   
+    if (category == "assignments") {   //ASSIGNMENTS
         for (int i = 0; i < assignments.size(); i++) {
             sum_grade += assignments[i];
-            cout << assignments[i] << " ";
         }
-        cout << "= " << sum_grade << endl;
-        return sum_grade;
+	return sum_grade;
     }
     
-    //if (_category == "LABS") {
-    if (_category == "LABS") {   //LABS
-        cout << "Labs ";
+    if (category == "labs") {   //LABS
         for (int i = 0; i < labs.size(); i++) {
             sum_grade += labs[i];
-            cout << labs[i] << " ";
         }
-        cout << "= " << sum_grade << endl;
-        return sum_grade;
+	return sum_grade;
     }
     
-    //if (_category == "PROJECTS") {
-    if (_category == "PROJECTS") {  //PROJECTS
-        cout << "Projects ";
+    if (category == "projects") {  //PROJECTS
         for (int i = 0; i < projects.size(); i++) {
             sum_grade += projects[i];
-            cout << projects[i] << " ";
         }
-        cout << "= " << sum_grade << endl;
-        return sum_grade;
+	return sum_grade;
     }
     
-    //if (_category == "EXAM") {
-    if (_category == "EXAM") {  //EXAM
-        cout << "Exam ";
+    if (category == "exam") {  //EXAM
         sum_grade = exam;
-        cout << exam << " = " << sum_grade << endl;
         return sum_grade;
     }
     
-    return sum_grade;
 }
 
 double Grade_book::course()
