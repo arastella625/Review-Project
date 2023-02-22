@@ -1,8 +1,8 @@
 #ifndef GRADE_BOOK
 #define GRADE_BOOK
-
 #include <vector>
 #include <string>
+
 
 class Grade_book {
     private:
@@ -10,17 +10,18 @@ class Grade_book {
         std::vector<double> assignments;
         std::vector<double> projects;
         double exam;
-        const double course_total = 1000;
         
     public:
         Grade_book();
         void read_file(std::string file_Name);
         void output_file(std::string file_name, std::string task_answer, int task_num, int task_grade);
-        double individual(std::string task, int task_num);
-        double category(std::string _category);
+        double individual(std::string category, int cat_num);
+        double category(std::string category);
         double course();
-        void print_individual();
-        void print_category();
+        void print_individual(std::string category, int cat_num);
+        void print_category(std::string category_name);
         void print_course();
 };
+
+
 #endif /* GRADE_BOOK */
