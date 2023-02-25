@@ -101,4 +101,22 @@ After outputting the deliverable chosen by the user, the program will prompt the
     - This number will be a new grade number for that specific lab/assignment/project/exam. 
   
 After the last question, the program will then change the grade the user entered to the new grade, overwriting the input file given. The program will then end. The user can now run the program again with the same file to work with the new grade. 
+
+## Making Your Own Data File
+
+Creating your own data file is simple. However, there is a specific structure for it. First, it should be a txt file. The file should set up like this:
+
+Labs// 1 2 3 4 5 6 7 8 9 10
+Assignments// 1 2 3 4
+Projects// 1 2
+Exam// 1
+
+The numbers will be where the grade goes for that specific task. A text file will look like this for a student that got full points on everything.
+
+       20 20 20 20 20 20 20 20 20 20
+       50 50 50 50
+       150 350
+       100
+
+Setting up any other way will cause the program to not work/read the file correctly. 
     
