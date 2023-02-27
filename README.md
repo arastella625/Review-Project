@@ -106,7 +106,7 @@ Our Planning Phase consisted of several meetings: an in-person to write the pseu
  <tr>
   <td><img src="_resources/option-1-input.png"></td>
   <td><img src="_resources/option-1-output.png"></td>
-  <td>Finally, we see option #1 of <code>::print_course()</code> which prints EVERY grade from each category, along with the overall course performanc. No changes were made to the input file between this run and option #2's execution, demonstrating proper functionality and repeatability</td>
+  <td>Finally, we see option #1 of <code>::print_course()</code> which prints EVERY grade from each category, along with the overall course performance. No changes were made to the input file between this run and option #2's execution, demonstrating proper functionality and repeatability</td>
  </tr>
 </table>
 
