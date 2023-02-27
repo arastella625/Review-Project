@@ -76,4 +76,17 @@ Our Planning Phase consisted of several meetings: an in-person to write the pseu
  </ol>
  <br>
  <b>Sample Input/Output Screenshots:</b>
+ <br>
+ <table>
+  <tr>
+   <th>Input Screenshot</th>
+   <th>Output Screenshot</th>
+   <th>Explanation</th>
+  </tr>
+  <tr>
+   <td><img="_resources/individual-input.png"></td>
+   <td><img="_resources/individual-output.png"></td>
+   <td>Calling the <code>individual</code> function and requesting Project #2's grade. The output is 300. (See line 3, grade 2 of input)</td>
+  </tr>
+ </table>
 
