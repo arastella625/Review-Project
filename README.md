@@ -50,7 +50,7 @@ Our Planning Phase consisted of several meetings: an in-person to write the pseu
  <ul><li>The following command will compile the program using G++: <code>g++ main.cpp gradebook.cpp -o programName</code></li></ul>
  <br>
  <br>
- <b><Runtime Instructions:</b>
+ <b>Runtime Instructions:</b>
  <ol>
  <li>Ensure the executable and the input file are in the same directory</li>
  <li>Execute the program with the appropriate command-line arguments:</li>
@@ -79,8 +79,8 @@ Our Planning Phase consisted of several meetings: an in-person to write the pseu
  <br>
  <table>
   <tr>
-   <th>Input Screenshot</th>
-   <th>Output Screenshot</th>
+   <th>Sample Input File</th>
+   <th>Sample Execution + Outputt</th>
    <th>Explanation</th>
   </tr>
   <tr>
