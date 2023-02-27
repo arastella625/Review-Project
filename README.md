@@ -80,13 +80,33 @@ Our Planning Phase consisted of several meetings: an in-person to write the pseu
  <table>
   <tr>
    <th>Sample Input File</th>
-   <th>Sample Execution + Outputt</th>
+   <th>Sample Execution + Output</th>
    <th>Explanation</th>
   </tr>
   <tr>
    <td><img src="_resources/individual-input.png"></td>
    <td><img src="_resources/individual-output.png"></td>
-   <td>Calling the <code>individual</code> function and requesting Project #2's grade. The output is 300. (See line 3, grade 2 of input)</td>
+   <td>Calling the <code>::print_individual()</code> function and requesting Project #2's grade. The output is 300 (See line 3, grade 2 of input)</td>
   </tr>
- </table>
+  <tr>
+   <td><img src="_resources/category-input.png"></td>
+   <td><img src="_resources/category-output.png"></td>
+   <td>Calling the <code>::print_category()</code> function and requesting the "labs" category. The output is each individual lab grade, and the total lab points achieved</td>
+ </tr>
+ <tr>
+  <td><img src="_resources/option-3-input.png"></td>
+  <td><img src="_resources/option-3-output.png"></td>
+  <td>Option 3 of <code>::print_course()</code>. This displays <i>only</i> the overall grade achieved. Since our input file is a 'perfect score', the student has achieved a 100</td>
+ </tr>
+ <tr>
+  <td><img src="_resources/option-2-input.png"></td>
+  <td><img src="_resources/option-2-output.png"></td>
+  <td>After using <code>::modify_file()</code>, our student now has a 50 for their exam grade (line 4 of the input file). This reflects as a drop in 5 points of their overall course grade and also demonstrates option #2 of the <code>::print_course()</code> menu (category totals + overall grade)</td>
+ </tr>
+ <tr>
+  <td><img src="_resources/option-1-input.png"></td>
+  <td><img src="_resources/option-1-output.png"></td>
+  <td>Finally, we see option #1 of <code>::print_course()</code> which prints EVERY grade from each category, along with the overall course performanc. No changes were made to the input file between this run and option #2's execution, demonstrating proper functionality and repeatability</td>
+ </tr>
+</table>
 
